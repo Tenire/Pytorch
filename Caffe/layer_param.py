@@ -30,7 +30,11 @@ class Layer_param():
         self.top=self.param.top
         self.top.extend(top)
         self.bottom=self.param.bottom
-        self.bottom.extend(bottom)
+        #self.bottom.extend(bottom)
+        if None not in bottom:
+            print(bottom)
+            self.bottom.extend(bottom)
+
 
     def fc_param(self, num_output, weight_filler='xavier', bias_filler='constant',has_bias=True):
         if self.type != 'InnerProduct':
